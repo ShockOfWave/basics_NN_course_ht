@@ -170,3 +170,7 @@ cython_debug/
 /models
 
 **.idea**
+
+/mnist_data
+
+wandb

@@ -25,7 +25,7 @@ def add_units_to_conv2d(x, y, unique_values=10):
 
 
 config = {
-        'epochs': 50,
+        'epochs': 100,
         'learning_rate_encoder': 3e-4,
         'learning_rate_decoder': 3e-4,
         'learning_rate_discriminator': 3e-5,
