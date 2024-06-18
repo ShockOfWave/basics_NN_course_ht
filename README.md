@@ -23,35 +23,6 @@ basics_NN_course_ht/
 
 ##### Develop a bundle of VAE and GAN to recover numbers from the MNIST dataset. In this case, VAE and GAN are not separate neural networks, but form a single pipeline with a triplex loss function
 
-[//]: # (<p align="center">)
-
-[//]: # (    <figure style="display: inline-block; margin: 0 10px; text-align: center">)
-
-[//]: # (        <img src="images/real_images.gif" alt="real images" width="200"/>)
-
-[//]: # (        <figcaption style="font-weight: bold; font-size: 16px">Real images</figcaption>)
-
-[//]: # (    </figure>)
-
-[//]: # (    <figure style="display: inline-block; margin: 0 10px; text-align: center">)
-
-[//]: # (        <img src="images/recon_images.gif" alt="real images" width="200"/>)
-
-[//]: # (        <figcaption style="font-weight: bold; font-size: 16px">Reconstructed images</figcaption>)
-
-[//]: # (    </figure>)
-
-[//]: # (    <figure style="display: inline-block; margin: 0 10px; text-align: center">)
-
-[//]: # (        <img src="images/generated_images.gif" alt="real images" width="200"/>)
-
-[//]: # (        <figcaption style="font-weight: bold; font-size: 16px">Generated images</figcaption>)
-
-[//]: # (    </figure>)
-
-[//]: # (</p>)
-
-
 <table>
   <tr>
     <td align="center">
