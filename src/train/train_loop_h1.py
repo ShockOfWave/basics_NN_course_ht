@@ -20,9 +20,9 @@ def train_vaegan(config, vaegan, discriminator, train_dataloader, test_dataloade
     x_val_fixed = Variable(sample_test_batch[0]).to(device)
     z_val_fixed = Variable(torch.randn((config['batch_size'], config['latent_dim']))).to(device)
 
-    encoder_optimizer = torch.optim.RMSprop(vaegan.encoder.parameters(), lr=config['learning_rate_encoder'])
-    decoder_optimizer = torch.optim.RMSprop(vaegan.decoder.parameters(), lr=config['learning_rate_decoder'])
-    discriminator_optimizer = torch.optim.RMSprop(discriminator.parameters(), lr=config['learning_rate_discriminator'])
+    encoder_optimizer = torch.optim.RAdam(vaegan.encoder.parameters(), lr=config['learning_rate_encoder'])
+    decoder_optimizer = torch.optim.RAdam(vaegan.decoder.parameters(), lr=config['learning_rate_decoder'])
+    discriminator_optimizer = torch.optim.RAdam(discriminator.parameters(), lr=config['learning_rate_discriminator'])
 
     encoder_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(encoder_optimizer, mode='min', factor=0.5, patience=5)
     decoder_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(decoder_optimizer, mode='min', factor=0.5, patience=5)
@@ -124,6 +124,11 @@ def train_vaegan(config, vaegan, discriminator, train_dataloader, test_dataloade
         wandb.log({"epoch": epoch, "dis_real": sum(dis_real_list) / len(dis_real_list)})
         wandb.log({"epoch": epoch, "dis_fake": sum(dis_fake_list) / len(dis_fake_list)})
         wandb.log({"epoch": epoch, "dis_prior": sum(dis_prior_list) / len(dis_prior_list)})
+        wandb.log({
+            'encoder_lr': encoder_optimizer.param_groups[0]['lr'],
+            'decoder_lr': decoder_optimizer.param_groups[0]['lr'],
+            'discriminator_lr': discriminator_optimizer.param_groups[0]['lr']
+        })
 
         recon_fixed = vaegan(x_fixed)[2].detach()
         prior_fixed = vaegan.decoder(z_fixed).detach()

@@ -160,7 +160,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 *.xlsx
-*.csv
+#*.csv
 
 #Mac files
 **.DS_Store**
@@ -174,3 +174,5 @@ cython_debug/
 /mnist_data
 
 wandb
+
+/media
