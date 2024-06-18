@@ -46,3 +46,39 @@ Develop RNN, GRU and LSTM to predict Usage_kWh. Dataset - http://archive.ics.uci
 Hyperparameters are at your discretion
 
 Compare the quality of the MSE, RMSE and R^2 models
+
+### Acknowledgement and literature
+
+#### VAE+GAN:
+```
+@ARTICLE{Larsen2015-yc,
+  title         = "Autoencoding beyond pixels using a learned similarity metric",
+  author        = "Larsen, Anders Boesen Lindbo and S{\o}nderby, S{\o}ren Kaae
+                   and Larochelle, Hugo and Winther, Ole",
+  month         =  dec,
+  year          =  2015,
+  copyright     = "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.LG",
+  eprint        = "1512.09300"
+}
+   ```
+
+https://github.com/rishabhd786/VAE-GAN-PYTORCH
+
+#### RNN
+
+```
+@ARTICLE{Schmidt2019-ai,
+  title         = "Recurrent Neural Networks ({RNNs)}: A gentle introduction
+                   and overview",
+  author        = "Schmidt, Robin M",
+  month         =  nov,
+  year          =  2019,
+  copyright     = "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.LG",
+  eprint        = "1912.05911"
+}
+
+```
